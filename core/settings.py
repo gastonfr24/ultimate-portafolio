@@ -193,5 +193,5 @@ if not DEBUG:
     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
     CORS_ORIGIN_WHITELIST = env('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS_DEPLOY')
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
