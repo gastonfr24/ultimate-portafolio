@@ -188,8 +188,28 @@ if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 if not DEBUG:
-    ALLOWED_HOSTS=['https://gastonfr.com', 'https://gastonfr.onrender.com']
-    CORS_ORIGIN_WHITELIST = ['https://gastonfr.com', 'https://gastonfr.onrender.com']
-    CSRF_TRUSTED_ORIGINS = ['https://gastonfr.com', 'https://gastonfr.onrender.com']
+    ALLOWED_HOSTS = [
+        "gastonfr.com",
+        ".gastonfr.com",
+        "www.lemon-py.com",
+        "https://gastonfr.com",
+        "https://gastonfr.onrender.com",
+        "gastonfr.onrender.com",
+    ]
+    CORS_ALLOWED_ORIGINS = [
+        "gastonfr.onrender.com",
+        "https://gastonfr.onrender.com",
+        "gastonfr.com",
+        "https://gastonfr.com",
+
+    ]
+
+    CORS_ORIGIN_WHITELIST = [
+        "gastonfr.onrender.com",
+        "https://gastonfr.onrender.com",
+
+        "https://lemon-py.com",
+        "gastonfr.com",
+    ]
     # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
