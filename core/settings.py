@@ -184,9 +184,6 @@ STATICFILES_DIRS = [
 
 # Froala media files
 FROALA_UPLOAD_PATH = MEDIA_ROOT
-FROALA_EDITOR_JS_FILES = [
-    MEDIA_ROOT + 'custom_colors.js',
-]
 
 
 # Default primary key field type
