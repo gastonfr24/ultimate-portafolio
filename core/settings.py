@@ -55,7 +55,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-CSRF_COOKIE_DOMAIN = "gastonfr.com"
+
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
@@ -190,10 +190,14 @@ if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 if not DEBUG:
+    CSRF_COOKIE_DOMAIN = "gastonfr.com"
     ALLOWED_HOSTS = [
         "gastonfr.com",
         ".gastonfr.com",
         "https://gastonfr.com",
+        "gastonfr.onrender.com",
+        ".gastonfr.onrender.com",
+        "https://gastonfr.onrender.com",
     ]
 
     CORS_ORIGIN_WHITELIST = [
