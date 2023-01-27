@@ -125,12 +125,12 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # Database Postgresql
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 # Password validation
 
@@ -229,8 +229,8 @@ if not DEBUG:
     # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-    # Database Postgresql
-    # DATABASES = {
-    #     "default": env.db("DATABASE_URL"),
-    # }
+    #Database Postgresql
+    DATABASES = {
+        "default": env.db("DATABASE_URL"),
+    }
     DATABASES["default"]["ATOMIC_REQUESTS"] = True
