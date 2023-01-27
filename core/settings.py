@@ -180,7 +180,7 @@ STATICFILES_DIRS = [
 ]
 
 # Froala media files
-FROALA_UPLOAD_PATH = '/media/'
+FROALA_UPLOAD_PATH = MEDIA_ROOT
 
 
 # Default primary key field type
