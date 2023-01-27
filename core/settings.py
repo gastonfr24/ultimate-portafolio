@@ -180,10 +180,10 @@ STATICFILES_DIRS = [
 ]
 
 # Froala media files
-FROALA_UPLOAD_PATH = MEDIA_ROOT
-FROALA_EDITOR_JS_FILES = [
-    MEDIA_ROOT + 'custom_colors.js',
-]
+FROALA_UPLOAD_PATH = MEDIA_URL
+# FROALA_EDITOR_JS_FILES = [
+#     MEDIA_ROOT + 'custom_colors.js',
+# ]
 
 
 # Default primary key field type
@@ -222,7 +222,6 @@ if not DEBUG:
     EMAIL_USE_TLS = True
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 
-    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Database Postgresql
