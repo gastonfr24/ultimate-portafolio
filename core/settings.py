@@ -90,12 +90,15 @@ CSRF_TRUSTED_ORIGINS = [
 if not DEBUG:
 
     CORS_ALLOWED_ORIGINS = [
+        "https://gastonfr.com",
         "https://www.gastonfr.com",
 ]
     CORS_ORIGIN_WHITELIST = [
+        "https://gastonfr.com"
         'https://www.gastonfr.com'
     ]
     CSRF_TRUSTED_ORIGINS = [
+        "https://gastonfr.com",
         "https://www.gastonfr.com",
     ]
 
