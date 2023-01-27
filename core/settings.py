@@ -13,8 +13,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1"
+]
 
+if not DEBUG:
+    ALLOWED_HOSTS = [
+        'gastonfr.com',
+        '.gastonfr.com',
+        "https://gastonfr.com",
+        'www.gastonfr.com'
+    ]
+
+# Deploy Settings
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application
 
@@ -184,18 +199,9 @@ FILE_UPLOAD_PERMISSIONS = 0o640
 
 EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
-# Deploy Settings
-RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
-if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 
 if not DEBUG:
-    ALLOWED_HOSTS = [
-        'gastonfr.com',
-        '.gastonfr.com',
-        "https://gastonfr.com",
-        'www.gastonfr.com'
-    ]
     CSRF_COOKIE_DOMAIN = "gastonfr.com"
     CORS_ALLOWED_ORIGINS = [
         "https://www.gastonfr.com",
