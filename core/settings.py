@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = 'RENDER' not in os.environ
+DEBUG = False
 
 ALLOWED_HOSTS = [
         'gastonfr.com',
@@ -78,10 +78,16 @@ ROOT_URLCONF = 'core.urls'
 CORS_ORIGIN_WHITELIST = [
         "https://gastonfr.com"
         'https://www.gastonfr.com',
+
+        'https://gastonfr.s3.amazonaws.com',
+        'https://gastonfr.s3.sa-east-1.amazonaws.com',
     ]
 CSRF_TRUSTED_ORIGINS = [
         "https://gastonfr.com",
         "https://www.gastonfr.com",
+
+        'https://gastonfr.s3.amazonaws.com',
+        'https://gastonfr.s3.sa-east-1.amazonaws.com',
     ]
 
 if not DEBUG:
@@ -92,10 +98,15 @@ if not DEBUG:
     CORS_ORIGIN_WHITELIST = [
         "https://gastonfr.com"
         'https://www.gastonfr.com',
+
+        'https://gastonfr.s3.amazonaws.com',
+        'https://gastonfr.s3.sa-east-1.amazonaws.com',
     ]
     CSRF_TRUSTED_ORIGINS = [
         "https://gastonfr.com",
         "https://www.gastonfr.com",
+        'https://gastonfr.s3.amazonaws.com',
+        'https://gastonfr.s3.sa-east-1.amazonaws.com',
     ]
 
 TEMPLATES = [
