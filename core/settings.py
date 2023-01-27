@@ -56,20 +56,19 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'core.urls'
 
 
+CORS_ALLOWED_ORIGINS = [
+        "gastonfr.com",
+        "https://gastonfr.com",
+        'https://www.gastonfr.com',
+    ]
+
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:8000',
-    
-
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:8000',
-
-]
+        "gastonfr.onrender.com",
+        "https://gastonfr.onrender.com",
+        'https://www.gastonfr.com',
+        'https://gastonfr.com'
+        "gastonfr.com",
+    ]
 
 TEMPLATES = [
     {
@@ -193,24 +192,19 @@ if not DEBUG:
     ALLOWED_HOSTS = [
         "gastonfr.com",
         ".gastonfr.com",
-        "www.lemon-py.com",
         "https://gastonfr.com",
-        "https://gastonfr.onrender.com",
-        "gastonfr.onrender.com",
     ]
     CORS_ALLOWED_ORIGINS = [
-        "gastonfr.onrender.com",
-        "https://gastonfr.onrender.com",
         "gastonfr.com",
         "https://gastonfr.com",
-        'https://www.gastonfr.com'
+        'https://www.gastonfr.com',
     ]
 
     CORS_ORIGIN_WHITELIST = [
         "gastonfr.onrender.com",
         "https://gastonfr.onrender.com",
         'https://www.gastonfr.com',
-        "https://lemon-py.com",
+        'https://gastonfr.com'
         "gastonfr.com",
     ]
     # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -220,4 +214,4 @@ if not DEBUG:
     # DATABASES = {
     #     "default": env.db("DATABASE_URL"),
     # }
-    # DATABASES["default"]["ATOMIC_REQUESTS"] = True
+    DATABASES["default"]["ATOMIC_REQUESTS"] = True

@@ -31,7 +31,7 @@ const skills = [
 {
   name: 'Base de datos',
   subskills : [
-    {name:'Base de datos', color:'hover:bg-violet-200'},
+    {name:'Postgres', color:'hover:bg-violet-200'},
     {name:' MySQL ', color:'hover:bg-blue-200'},
   ]
 },
@@ -40,7 +40,7 @@ const skills = [
   subskills : [
     {name:'estadística descriptiva', color:'hover:bg-yellow-200'},
     {name:' álgebra lineal', color:'hover:bg-green-200'},
-    {name:'probabilidad', color:'hover:bg-breen-200'},
+    {name:'probabilidad', color:'hover:bg-blue-200'},
   ]
 },
 {
