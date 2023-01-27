@@ -14,12 +14,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = [
-        'gastonfr.com',
-        '.gastonfr.com',
-        "https://gastonfr.com",
-        'https://www.gastonfr.com'
-        'www.gastonfr.com'
-    ]
+    "localhost",
+    "127.0.0.1"
+]
 
 if not DEBUG:
     ALLOWED_HOSTS = [
@@ -76,13 +73,19 @@ ROOT_URLCONF = 'core.urls'
 
 
 CORS_ORIGIN_WHITELIST = [
-        "https://gastonfr.com"
-        'https://www.gastonfr.com',
-    ]
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    
+
+]
+CSRF_COOKIE_DOMAIN = "gastonfr.com"
 CSRF_TRUSTED_ORIGINS = [
-        "https://gastonfr.com",
-        "https://www.gastonfr.com",
-    ]
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+
+]
 
 if not DEBUG:
 #     CORS_ALLOWED_ORIGINS = [
@@ -180,10 +183,10 @@ STATICFILES_DIRS = [
 ]
 
 # Froala media files
-FROALA_UPLOAD_PATH = MEDIA_URL
-# FROALA_EDITOR_JS_FILES = [
-#     MEDIA_ROOT + 'custom_colors.js',
-# ]
+FROALA_UPLOAD_PATH = MEDIA_ROOT
+FROALA_EDITOR_JS_FILES = [
+    MEDIA_ROOT + 'custom_colors.js',
+]
 
 
 # Default primary key field type
@@ -222,6 +225,7 @@ if not DEBUG:
     EMAIL_USE_TLS = True
     EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Database Postgresql
