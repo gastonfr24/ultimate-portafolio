@@ -11,14 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV')
-ALLOWED_HOSTS = [
-        "gastonfr.com",
-        ".gastonfr.com",
-        "https://gastonfr.com",
-    ]
+
 
 # Application
 
@@ -199,6 +195,7 @@ if not DEBUG:
         ".gastonfr.com",
         "https://gastonfr.com",
     ]
+
     CORS_ORIGIN_WHITELIST = [
         "gastonfr.onrender.com",
         "https://gastonfr.onrender.com",
