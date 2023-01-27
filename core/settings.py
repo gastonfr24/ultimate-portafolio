@@ -206,19 +206,10 @@ if not DEBUG:
     ]
 
     CORS_ORIGIN_WHITELIST = [
-        "gastonfr.onrender.com",
-        "https://gastonfr.onrender.com",
-        'https://www.gastonfr.com',
         'https://gastonfr.com'
-        "gastonfr.com",
     ]
     CSRF_TRUSTED_ORIGINS = [
-        "gastonfr.com",
-        ".gastonfr.com",
         "https://gastonfr.com",
-        "gastonfr.onrender.com",
-        ".gastonfr.onrender.com",
-        "https://gastonfr.onrender.com",
     ]
 
     # Email settings
