@@ -16,6 +16,8 @@ import { FaBookOpen } from "react-icons/fa"
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 
+// CV
+import CV from 'assets/pdf/CV Gaston Franco.pdf'
 
 const solutions = [
   {
@@ -103,8 +105,9 @@ function Navbar() {
               Contacto
             </NavLink>
 
-            <Link
-        t0="/contacto"
+            <a
+        href={CV}
+        download
         className="inline-flex items-center rounded-[4px] border border-transparent bg-gray-800 pl-3 pr-2 pb-1 pt-1.5  text-xs uppercase font-gilroy-medium text-white shadow-sm hover:bg-violet-cus transition duration-300 ease-in-out ml-6 focus:outline-none focus:ring-2 focus:ring-violet-cus focus:ring-offset-2"
       >
         Descargar CV
@@ -114,8 +117,7 @@ function Navbar() {
             color="#f2f2f2"
             size={6}
             />
-      </Link>
-            
+      </a>
           </div>
         </div>
         {/* Mobile Navbar */}

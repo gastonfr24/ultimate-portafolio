@@ -66,7 +66,7 @@ function Intereses() {
         <div className="grid lg:grid-cols-3 w-5/6 mx-auto gap-x-8 gap-y-4 pt-6">
           
         {intereses.map((interes, index) => (
-          <div className="flex items-center w-full h-52 group">
+          <div className="flex items-center w-full h-52 group" key={index}>
         <div className="mx-auto">
           <interes.icon className="text-4xl mx-auto my-4 group-hover:text-violet-cus transition duration-300"/>
           <h2 className="text-center font-gilroy-semibold text-lg my-2 group-hover:text-violet-cus transition duration-300">{interes.title}</h2>

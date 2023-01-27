@@ -107,7 +107,6 @@ function Skills() {
       
       <li className={`transition duration-700 ease-in-out capitalize ${subskill.color} my-2 text-center rounded- font-gilroy-semibold text-[15px]`} key={sub_index}>
       {subskill.name}
-      {console.log('to-'+subskill.color+'200')}
       </li>
       ))}
     </ul>

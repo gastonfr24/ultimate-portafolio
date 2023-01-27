@@ -203,13 +203,13 @@ if not DEBUG:
         "https://gastonfr.onrender.com",
         "gastonfr.com",
         "https://gastonfr.com",
-
+        'https://www.gastonfr.com'
     ]
 
     CORS_ORIGIN_WHITELIST = [
         "gastonfr.onrender.com",
         "https://gastonfr.onrender.com",
-
+        'https://www.gastonfr.com',
         "https://lemon-py.com",
         "gastonfr.com",
     ]
