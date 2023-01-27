@@ -78,13 +78,26 @@ CORS_ORIGIN_WHITELIST = [
     
 
 ]
-
+CSRF_COOKIE_DOMAIN = "gastonfr.com"
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'http://127.0.0.1:8000',
 
 ]
+
+
+if not DEBUG:
+
+    CORS_ALLOWED_ORIGINS = [
+        "https://www.gastonfr.com",
+]
+    CORS_ORIGIN_WHITELIST = [
+        'https://www.gastonfr.com'
+    ]
+    CSRF_TRUSTED_ORIGINS = [
+        "https://www.gastonfr.com",
+    ]
 
 TEMPLATES = [
     {
@@ -202,17 +215,6 @@ EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 
 if not DEBUG:
-    CSRF_COOKIE_DOMAIN = "gastonfr.com"
-    CORS_ALLOWED_ORIGINS = [
-        "https://www.gastonfr.com",
-]
-    CORS_ORIGIN_WHITELIST = [
-        'https://www.gastonfr.com'
-    ]
-    CSRF_TRUSTED_ORIGINS = [
-        "https://www.gastonfr.com",
-    ]
-
     # Email settings
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
