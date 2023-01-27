@@ -11,10 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
+# DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV')
 
+# Application definition
+DOMAIN = os.environ.get('DOMAIN')
 
 # Application
 
@@ -55,21 +58,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
-
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:8000',
-    
-
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
-    'http://127.0.0.1:8000',
-
-]
 
 TEMPLATES = [
     {
@@ -189,14 +177,19 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
+
+CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')
+
 if not DEBUG:
     ALLOWED_HOSTS = [
         "gastonfr.com",
         ".gastonfr.com",
         "https://gastonfr.com",]
-        
+
     CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
+
     # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
