@@ -2,8 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Contact
-from django.core.mail import send_mail
-
+from django.template.loader import render_to_string
 
 class ContactCreateView(APIView):
     def post(self, request, format=None):
@@ -14,19 +13,16 @@ class ContactCreateView(APIView):
         subject = data['subject']
         message = data['message']
 
-        message_email = ('Name: ' + name +
-                        '\nEmail: ' + email +
-                        '\n\n' + message)
+        template = render_to_string('mail/correo.html', {
+                'name': name,
+                'body': message,
+                'email': email,
+                'subject':subject
+            })
         try:
-            send_mail(
-                subject,
-                message_email,
-                # quien manda
-                'lavoucra@gmail.com',
-                # a quienes les llega   
-                ['mail@lemonpy.awsapps.com'],
-                fail_silently=False
-            )
+            email.attach_alternative(template, "text/html")
+            email.fail_silently = False
+            email.send()
 
             Contact.objects.create(
                     name=name,
