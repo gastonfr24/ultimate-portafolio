@@ -56,19 +56,20 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'core.urls'
 
 
-CORS_ALLOWED_ORIGINS = [
-        "gastonfr.com",
-        "https://gastonfr.com",
-        'https://www.gastonfr.com',
-    ]
-
 CORS_ORIGIN_WHITELIST = [
-        "gastonfr.onrender.com",
-        "https://gastonfr.onrender.com",
-        'https://www.gastonfr.com',
-        'https://gastonfr.com'
-        "gastonfr.com",
-    ]
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    
+
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+
+]
 
 TEMPLATES = [
     {
@@ -192,21 +193,10 @@ if not DEBUG:
     ALLOWED_HOSTS = [
         "gastonfr.com",
         ".gastonfr.com",
-        "https://gastonfr.com",
-    ]
-    CORS_ALLOWED_ORIGINS = [
-        "gastonfr.com",
-        "https://gastonfr.com",
-        'https://www.gastonfr.com',
-    ]
-
-    CORS_ORIGIN_WHITELIST = [
-        "gastonfr.onrender.com",
-        "https://gastonfr.onrender.com",
-        'https://www.gastonfr.com',
-        'https://gastonfr.com'
-        "gastonfr.com",
-    ]
+        "https://gastonfr.com",]
+        
+    CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
+    CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
     # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
