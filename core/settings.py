@@ -190,26 +190,21 @@ if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 if not DEBUG:
-    CSRF_COOKIE_DOMAIN = "gastonfr.com"
-    CORS_ALLOWED_ORIGINS = [
-        "gastonfr.onrender.com",
-        "https://gastonfr.onrender.com",
-        "gastonfr.com",
-        "https://gastonfr.com",
-
-]
     ALLOWED_HOSTS = [
         'gastonfr.com',
         '.gastonfr.com',
         "https://gastonfr.com",
         'www.gastonfr.com'
     ]
-
+    CSRF_COOKIE_DOMAIN = "gastonfr.com"
+    CORS_ALLOWED_ORIGINS = [
+        "https://www.gastonfr.com",
+]
     CORS_ORIGIN_WHITELIST = [
-        'https://gastonfr.com'
+        'https://www.gastonfr.com'
     ]
     CSRF_TRUSTED_ORIGINS = [
-        "https://gastonfr.com",
+        "https://www.gastonfr.com",
     ]
 
     # Email settings
