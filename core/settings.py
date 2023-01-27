@@ -11,10 +11,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV')
-
+ALLOWED_HOSTS = [
+        "gastonfr.com",
+        ".gastonfr.com",
+        "https://gastonfr.com",
+    ]
 
 # Application
 
