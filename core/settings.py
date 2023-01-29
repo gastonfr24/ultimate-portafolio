@@ -179,7 +179,7 @@ STATICFILES_DIRS = [
 ]
 
 # Froala media files
-FROALA_UPLOAD_PATH = '/media/froala-files'
+FROALA_UPLOAD_PATH = os.path.join(BASE_DIR, 'media/froala-files')
 
 
 # Default primary key field type
@@ -227,7 +227,7 @@ if not DEBUG:
     }
     DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
-
+if not DEBUG:
     AWS_QUERYSTRING_AUTH = False
 
     # aws settings
@@ -258,4 +258,4 @@ if not DEBUG:
 
     # Froala settings
     FROALA_UPLOAD_PATH = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/froala-files/'
-    FROALA_STORAGE_BACKEND = FROALA_UPLOAD_PATH
+    #FROALA_STORAGE_BACKEND = FROALA_UPLOAD_PATH
