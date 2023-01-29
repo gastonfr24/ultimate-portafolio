@@ -258,4 +258,4 @@ if not DEBUG:
 
     # Froala settings
     FROALA_UPLOAD_PATH = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
-    FROALA_STORAGE_BACKEND = MEDIA_ROOT
+    FROALA_STORAGE_BACKEND = 'django.core.files.storage.FileSystemStorage'
