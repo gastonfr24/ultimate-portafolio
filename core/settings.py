@@ -11,13 +11,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
         '*'
     ]
 
-if DEBUG:
+if not DEBUG:
     ALLOWED_HOSTS = [
         'gastonfr.com',
         '.gastonfr.com',
@@ -82,7 +82,7 @@ CSRF_TRUSTED_ORIGINS = [
         "http://localhost:8000"
     ]
 
-if DEBUG:
+if not DEBUG:
     CORS_ORIGIN_WHITELIST = [
         "https://gastonfr.com",
         'https://www.gastonfr.com',
@@ -209,7 +209,7 @@ EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 
 
-if DEBUG:
+if not DEBUG:
     # Email settings
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
