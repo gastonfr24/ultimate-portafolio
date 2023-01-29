@@ -19,7 +19,7 @@ class ContactCreateView(APIView):
             subject = data['subject']
             body = data['message']
 
-            template = render_to_string('mail/correo.html', {
+            template = render_to_string('correo.html', {
                     'name': name,
                     'body': body,
                     'email': email,

@@ -5,12 +5,10 @@ import { SkewLoader } from "react-spinners";
 
 // Icons
 import {AiOutlineMenu} from "react-icons/ai"
-import { FaWrench } from "react-icons/fa"
 import {ImCross} from "react-icons/im"
-import { HiUserGroup } from "react-icons/hi"
+import { HiUser } from "react-icons/hi"
 import { MdEmail } from "react-icons/md"
 import { BsBriefcaseFill } from "react-icons/bs"
-import { FaBookOpen } from "react-icons/fa"
 
 // Headles UI
 import { Popover, Transition } from '@headlessui/react'
@@ -23,32 +21,15 @@ const solutions = [
   {
     name: 'Proyectos',
     description: 'Measure actions your users take',
-    href: '/casos',
+    href: '/portfolio',
     icon: BsBriefcaseFill,
   },
+
   {
-    name: 'Servicios',
-    description: 'Create your own targeted content',
-    href: '/servicios',
-    icon: FaWrench,
-  },
-  {
-    name: 'Nosotros',
+    name: 'Sobre Mi',
     description: 'Keep track of your growth',
     href: '/nosotros',
-    icon: HiUserGroup,
-  },
-/*   {
-    name: 'Carreras',
-    description: 'Keep track of your growth',
-    href: '/carreras',
-    icon: AiOutlineMenu,
-  }, */
-  {
-    name: 'Blog',
-    description: 'Keep track of your growth',
-    href: '/blog',
-    icon: FaBookOpen,
+    icon: HiUser,
   },
   {
     name: 'Contacto',

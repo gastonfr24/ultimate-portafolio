@@ -11,7 +11,7 @@ import { setAlert } from "redux/actions/alerts/alert";
 import 'animate.css/animate.min.css';
 
 // Icons
-import { MdSpeakerNotesOff } from "react-icons/md"
+import { MdMail } from "react-icons/md"
 import { CheckCircleIcon } from "@heroicons/react/20/solid"
 import Alert from "components/alerts/alert";
 import { connect } from "react-redux";
@@ -68,11 +68,11 @@ const onSubmit = (e) =>{
        
       }else{
         setLoading(false)
-         setAlert('No se ha podido enviar el mail', 'text-rose-500', MdSpeakerNotesOff) 
+         setAlert('No se ha podido enviar el mail', 'text-rose-500', MdMail) 
       }
       }catch{
         setLoading(false)
-        setAlert('No se ha podido enviar el mail', 'text-rose-500', MdSpeakerNotesOff)
+        setAlert('No se ha podido enviar el mail', 'text-rose-500', MdMail)
       }
       }
       fetchData()
