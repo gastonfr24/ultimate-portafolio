@@ -76,7 +76,7 @@ ROOT_URLCONF = 'core.urls'
 
 
 CORS_ORIGIN_WHITELIST = [
-        "https://gastonfr.com"
+        "https://gastonfr.com",
         'https://www.gastonfr.com',
 
         'https://gastonfr.s3.amazonaws.com',
@@ -92,7 +92,7 @@ CSRF_TRUSTED_ORIGINS = [
 
 if not DEBUG:
     CORS_ORIGIN_WHITELIST = [
-        "https://gastonfr.com"
+        "https://gastonfr.com",
         'https://www.gastonfr.com',
 
         'https://gastonfr.s3.amazonaws.com',
