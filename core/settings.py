@@ -91,10 +91,6 @@ CSRF_TRUSTED_ORIGINS = [
     ]
 
 if not DEBUG:
-#     CORS_ALLOWED_ORIGINS = [
-#         "https://gastonfr.com",
-#         "https://www.gastonfr.com",
-# ]
     CORS_ORIGIN_WHITELIST = [
         "https://gastonfr.com"
         'https://www.gastonfr.com',
@@ -234,9 +230,9 @@ if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     # Database Postgresql
-    # DATABASES = {
-    #     "default": env.db("DATABASE_URL"),
-    # }
+    DATABASES = {
+        "default": env.db("DATABASE_URL"),
+    }
     DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 
