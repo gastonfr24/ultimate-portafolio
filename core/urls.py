@@ -6,10 +6,10 @@ from django.conf.urls.static import static
 from django.views.static import serve
 
 urlpatterns = [
+    path('froala_editor/', include('froala_editor.urls')),
     path('admin/', admin.site.urls),
     path('api/contacts/', include('apps.contacts.urls')),
     path('api/portfolio/', include('apps.portfolio.urls')),
-    path('froala_editor/', include('froala_editor.urls')),
 ] 
 
 
