@@ -37,7 +37,7 @@ class ContactCreateView(APIView):
             email.fail_silently = False
             email.send()
         except:
-            return Response({'success':'Error al enviar el correo'}, status = status.HTTP_200_OK)
+            return Response({'error':'Error al enviar el correo'}, status = status.HTTP_500_INTERNAL_SERVER_ERROR)
         try:
             Contact.objects.create(
                     name=name,

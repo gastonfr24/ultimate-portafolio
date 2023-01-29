@@ -14,11 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-        'gastonfr.com',
-        '.gastonfr.com',
-        "https://gastonfr.com",
-        'https://www.gastonfr.com'
-        'www.gastonfr.com'
+        '*'
     ]
 
 if not DEBUG:
@@ -76,18 +72,14 @@ ROOT_URLCONF = 'core.urls'
 
 
 CORS_ORIGIN_WHITELIST = [
-        "https://gastonfr.com",
-        'https://www.gastonfr.com',
-
-        'https://gastonfr.s3.amazonaws.com',
-        'https://gastonfr.s3.sa-east-1.amazonaws.com',
+        "http://127.0.0.1:8000",
+        "http://localhost:3000",
+        "http://localhost:8000"
     ]
 CSRF_TRUSTED_ORIGINS = [
-        "https://gastonfr.com",
-        "https://www.gastonfr.com",
-
-        'https://gastonfr.s3.amazonaws.com',
-        'https://gastonfr.s3.sa-east-1.amazonaws.com',
+        "http://127.0.0.1:8000",
+        "http://localhost:3000",
+        "http://localhost:8000"
     ]
 
 if not DEBUG:
