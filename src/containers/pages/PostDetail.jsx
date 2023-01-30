@@ -10,7 +10,6 @@ import { useParams } from "react-router-dom"
 import { get_portfolio } from "redux/actions/portfolio/portfolio"
 
 import {Helmet} from "react-helmet-async"
-import DomPorify from "dompurify"
 
 import avatar from "assets/img/avatar.jpg"
 
@@ -21,6 +20,16 @@ import {
   } from 'react-icons/fa';
 import { BsImageAlt } from "react-icons/bs"
 import { SiGmail } from "react-icons/si"
+
+// Froala 
+  // Require Editor JS files.
+  import 'froala-editor/js/froala_editor.pkgd.min.js';
+  
+  // Require Editor CSS files.
+  import 'froala-editor/css/froala_style.min.css';
+  import 'froala-editor/css/froala_editor.pkgd.min.css';
+  
+ import FroalaEditorView from 'react-froala-wysiwyg/FroalaEditorView'
 
 
 import Alert from "components/alerts/alert"
@@ -54,7 +63,7 @@ function PostDetail({get_portfolio, post}) {
         <Navbar/>
 {
     post && post.slug=== slug ?
-    <div classNameName="pt-28">
+    <div classNameName="py-28">
  
     <div className="mt-6">
               <div className="mx-auto">
@@ -144,9 +153,10 @@ function PostDetail({get_portfolio, post}) {
              <div className="bg-white px-10 lg:px-24 max-w-full lg:text-xl mx-auto text-gray-900 pt-4 rounded">
 
           {/*    	<!--content body--> */}
-                 <div>
-                        <p dangerouslySetInnerHTML={{__html:DomPorify.sanitize(post.content)}} 
-                        className="mt-2 py-8 leading-relax"/>
+                 <div className="">
+                  <p className="font-gilroy-medium text-lg px-4 py-24">
+                        <FroalaEditorView model={post.content}/>
+                  </p>
                  </div>
 
                  

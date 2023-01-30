@@ -6,9 +6,9 @@ import { SkewLoader } from "react-spinners";
 // Icons
 import {AiOutlineMenu} from "react-icons/ai"
 import {ImCross} from "react-icons/im"
-import { HiUser } from "react-icons/hi"
+import { FaUserAlt } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
-import { BsBriefcaseFill } from "react-icons/bs"
+import { BsBriefcaseFill, BsDownload } from "react-icons/bs"
 
 // Headles UI
 import { Popover, Transition } from '@headlessui/react'
@@ -17,23 +17,24 @@ import { Fragment } from 'react'
 // CV
 import CV from 'assets/pdf/CV Gaston Franco.pdf'
 
+
 const solutions = [
   {
-    name: 'Proyectos',
-    description: 'Measure actions your users take',
+    name: 'Portfolio',
+    description: 'Proyectos de ciencia de datos y el aprendizaje automático',
     href: '/portfolio',
     icon: BsBriefcaseFill,
   },
 
   {
     name: 'Sobre Mi',
-    description: 'Keep track of your growth',
+    description: 'Conoce más sobre mí, mis intereses y pasiones',
     href: '/nosotros',
-    icon: HiUser,
+    icon: FaUserAlt,
   },
   {
     name: 'Contacto',
-    description: 'Keep track of your growth',
+    description: '¿Tienes preguntas o estás interesado en trabajar juntos?',
     href: '/contacto',
     icon: MdEmail,
   },
@@ -62,6 +63,7 @@ function Navbar() {
       }
     }
   }
+  
 
 
   return (
@@ -170,12 +172,19 @@ function Navbar() {
                       className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-violet-500 focus-visible:ring-opacity-50"
                     >
                       <span className="flex items-center">
-                        <span className="text-sm font-medium text-gray-900">
-                          Documentation
+                        <span className="text-base font-base text-gray-900">
+                        <a
+        href={CV}
+        className='flex items-center px-1 py-1 text-violet-cus'
+        download
+      >
+        Descargar CV
+        <BsDownload className="mx-1 "/>
+      </a>
                         </span>
                       </span>
                       <span className="block text-sm text-gray-500">
-                        Start integrating products and tools
+                        Descarga el resumen de mi perfil.
                       </span>
                     </a>
                   </div>
@@ -185,7 +194,30 @@ function Navbar() {
           </>
         )}
       </Popover>
+      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                  <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
+                    {solutions.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-violet-500 focus-visible:ring-opacity-50"
+                      >
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
+                          <item.icon className="text-violet-cus" />
+                        </div>
+                        <div className="ml-4">
+                          <p className="text-sm font-medium text-gray-900">
+                            {item.name}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {item.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
 
+                </div>
             
           </div>
         </div>

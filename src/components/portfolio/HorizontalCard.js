@@ -19,6 +19,7 @@ function HorizontalCard({data}) {
                         <span className="mx-1 font-medium text-gray-800 text-sm"><Link to={`/category/${data.category.slug}`}>{data.category.name}</Link></span> <span className="text-gray-300">&middot;</span> 
                         <span className="mt-2 ml-2 mr-1 font-medium text-gray-800 text-sm">{moment(data.published).format('LL')}</span> <span className="text-gray-300">&middot;</span>
                         <span className="mt-2 mx-2 font-medium text-gray-800 text-sm">{data.time_read} min read</span> 
+                        <span className="mt-2 mx-2 font-medium text-gray-800 text-sm"><span className="text-violet-cus font-semibold">{data.views}</span> views</span> 
                         <p className="mt-4 text-lg font-regular text-gray-800 leading-8">{data.description.length > 150 ? data.description.slice(0,149):data.description}</p>
                     </div>
                   </div>

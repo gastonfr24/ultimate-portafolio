@@ -8,7 +8,7 @@ import { get_portfolio_list } from 'redux/actions/portfolio/portfolio'
 import { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 import SkeletonHomeCard from "components/loaders/SkeletonHomeCard";
-
+import { Link } from "react-router-dom";
 
 function ProjectList({
   get_portfolio_list,
@@ -80,9 +80,9 @@ function ProjectList({
 
 
         <div className="w-full items-center justify-center flex mt-8">
-            <button className="bg-gradient-to-r from-violet-cus to-indigo-400 text-white px-4 py-3 hover:from-indigo-400 hover:to-violet-cus transition duration-500">
+            <Link to='/portfolio' className="bg-gradient-to-r from-violet-cus to-indigo-400 text-white px-4 py-3 hover:from-indigo-400 hover:to-violet-cus transition duration-500">
                     Ver Más
-            </button>
+            </Link>
         </div>
 
 
