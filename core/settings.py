@@ -14,7 +14,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-        '*'
+        '127.0.0.1'
     ]
 
 if not DEBUG:
@@ -257,5 +257,5 @@ if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
     # Froala settings
-    FROALA_UPLOAD_PATH = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/froala-files/'
+    FROALA_UPLOAD_PATH = 'froala-fields'
     #FROALA_STORAGE_BACKEND = FROALA_UPLOAD_PATH
