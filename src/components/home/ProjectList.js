@@ -55,9 +55,9 @@ function ProjectList({
             {posts&&posts.slice(0, 3).map((data,index) => (
             <div className="">
                        <div className="rounded-xl group flex-col items-start overflow-hidden shadow-sm  hover:scale-95 transition-transform duration-1000">
-                        <a href="#_" className="block transition duration-1000 ease-out transform group-hover:scale-125">
+                        <Link to={`/portfolio/${data.slug}`} className="block transition duration-1000 ease-out transform group-hover:scale-125">
                             <img className="object-cover w-full shadow-sm h-60" src={data.thumbnail}/>
-                        </a>
+                        </Link>
                             </div>
                             <div className="flex flex-col items-start px-6 bg-white py-4 rounded-b-2xl">
                             <div className="">

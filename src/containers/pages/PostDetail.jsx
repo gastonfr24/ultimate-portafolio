@@ -73,26 +73,26 @@ function PostDetail({get_portfolio, post}) {
                     
 
                                         {/* 	<!--post heading--> */}
-                                        <div className="ml-8 px-10 lg:mx-12">
+                                        <div className="text-center lg:text-left lg:ml-8 lg:px-10 lg:mx-12">
                                         <p
-                            className="max-w-full mx-auto  text-4xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-6xl font-semibold text-black">{post.title}</p>
+                            className="max-w-full mx-auto text-3xl sm:text-3xl md:text-6xl lg:text-6xl xl:text-6xl font-semibold text-black">{post.title}</p>
                                             </div>
                         {/*     <!--post views--> */}
-                            <div className="px-16 lg:mx-12 flex justify-start items-center mt-8 ml-3 pb-10">
-                                <p className="text-base text-violet-cus font-semibold rounded-full hover:text-green-500">{post.views}</p>
-                                <p className="text-base text-gray-800 font-semibold ml-2">Views</p>
-                                <span className=" text-base text-gray-800 font-semibold ml-6 hover:text-violet-cus transition duration-500 ease-in-out"><Link to={`/category/${post.category.slug}`}>{post.category.name}</Link></span> <span className="text-gray-300">&middot;</span> 
-                                <span className="text-base text-gray-800 font-semibold ml-6">{moment(post.published).format('LL')}</span> <span className="text-gray-300">&middot;</span>
-                                <span className=" text-base text-gray-800 font-semibold ml-6">{post.time_read} min read</span> 
+                            <div className="lg:px-16 lg:mx-12 flex justify-start items-center mt-8 lg:ml-3 pb-10">
+                                <p className="text-xs lg:text-base text-violet-cus font-semibold rounded-full hover:text-green-500 ml-8">{post.views}</p>
+                                <p className="text-xs lg:text-base text-gray-800 font-semibold mx-0.5 lg:ml-2">Views</p>
+                                <span className=" text-xs lg:text-base text-gray-800 font-semibold mx-2 lg:ml-6 hover:text-violet-cus transition duration-500 ease-in-out"><Link to={`/category/${post.category.slug}`}>{post.category.name}</Link></span> <span className="text-gray-300">&middot;</span> 
+                                <span className="text-xs lg:text-base text-gray-800 font-semibold mx-2 lg:ml-6">{moment(post.published).format('LL')}</span> <span className="text-gray-300">&middot;</span>
+                                <span className=" text-xs lg:text-base text-gray-800 font-semibold mx-2 lg:ml-6">{post.time_read} min read</span> 
 
                             
                             </div>
 
 
-                            <div className=" w-full bg-white  mx-auto md:text-2xl text-gray-900 pt-10 rounded">
+                            <div className=" w-full bg-white text-lg mx-auto md:text-2xl text-gray-900 pt-10 rounded">
 
                             {/*    	<!--content body--> */}
-                                <div className="w-10/12 px-10 lg:mx-6 pb-2">
+                                <div className="lg:w-10/12 px-10 lg:mx-6 pb-2">
                                         <p className="lg:p-8 p-4 pb-6 text-semibold">{post.description}</p>
                                 </div>
                                     </div>

@@ -29,7 +29,7 @@ const solutions = [
   {
     name: 'Sobre Mi',
     description: 'Conoce más sobre mí, mis intereses y pasiones',
-    href: '/nosotros',
+    href: '/about',
     icon: FaUserAlt,
   },
   {
@@ -41,6 +41,20 @@ const solutions = [
 ]
 
 function Navbar() {
+  const onButtonClick = () => {
+    // using Java Script method to get PDF file
+    fetch('CV Gaston Franco.pdf').then(response => {
+        response.blob().then(blob => {
+            // Creating new object of PDF file
+            const fileURL = window.URL.createObjectURL(blob);
+            // Setting various property values
+            let alink = document.createElement('a');
+            alink.href = fileURL;
+            alink.download = 'CV Gaston Franco.pdf';
+            alink.click();
+        })
+    })
+}
 
   const [open, setOpen] = useState(false)
 
@@ -88,9 +102,8 @@ function Navbar() {
               Contacto
             </NavLink>
 
-            <a
-        href={CV}
-        download
+            <button
+        onClick={onButtonClick}
         className="inline-flex items-center rounded-[4px] border border-transparent bg-gray-800 pl-3 pr-2 pb-1 pt-1.5  text-xs uppercase font-gilroy-medium text-white shadow-sm hover:bg-violet-cus transition duration-300 ease-in-out ml-6 focus:outline-none focus:ring-2 focus:ring-violet-cus focus:ring-offset-2"
       >
         Descargar CV
@@ -100,7 +113,7 @@ function Navbar() {
             color="#f2f2f2"
             size={6}
             />
-      </a>
+      </button>
           </div>
         </div>
         {/* Mobile Navbar */}
@@ -194,31 +207,6 @@ function Navbar() {
           </>
         )}
       </Popover>
-      <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                  <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-                    {solutions.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-violet-500 focus-visible:ring-opacity-50"
-                      >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
-                          <item.icon className="text-violet-cus" />
-                        </div>
-                        <div className="ml-4">
-                          <p className="text-sm font-medium text-gray-900">
-                            {item.name}
-                          </p>
-                          <p className="text-sm text-gray-500">
-                            {item.description}
-                          </p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-
-                </div>
-            
           </div>
         </div>
       </div>
