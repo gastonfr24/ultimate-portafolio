@@ -12,6 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
+AWS_POSTGRES = True
 
 ALLOWED_HOSTS = [
         '127.0.0.1'
@@ -209,7 +210,7 @@ EMAIL_BACKEND='django.core.mail.backends.console.EmailBackend'
 
 
 
-if not DEBUG:
+if AWS_POSTGRES:
     # Email settings
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_PORT = 587
@@ -227,7 +228,7 @@ if not DEBUG:
     }
     DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
-if not DEBUG:
+if AWS_POSTGRES:
     AWS_QUERYSTRING_AUTH = False
 
     # aws settings

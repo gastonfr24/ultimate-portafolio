@@ -17,7 +17,7 @@ function About() {
       <title>Gaston Franco | Sobre Mí</title>
       <meta
       name="description"
-      content="Gaston Franco, Data Scientists and Python Developer"
+      content="Gaston Franco, Data Scientist and Python Developer"
     />
     <meta name="keywords" content="portafolio personal de gaston franco, cientifico de datos y desarrollador web con python" />
     <link rel="canonical" href="https://www.gfranco.com/" />
