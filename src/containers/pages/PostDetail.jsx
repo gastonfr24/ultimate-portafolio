@@ -34,6 +34,8 @@ import { SiGmail } from "react-icons/si"
 
 import Alert from "components/alerts/alert"
 
+// GOT 
+import portada from "assets/img/portada.png"
 
 
 function PostDetail({get_portfolio, post}) {
@@ -60,8 +62,8 @@ function PostDetail({get_portfolio, post}) {
      <meta name="author" content="GastonFranco" />
      <meta name="publisher" content="GastonFranco" />
      <meta property="og:title" content={post ? post.title : "Blog"} />
-      <meta property="og:description" content={post ? post.description : "Data Scientist and Python Developer"} />
-      <meta property="og:image" content={post ? data.description.length > 150 ? data.description.slice(0,149):data.description : ""} />
+      <meta property="og:description" content={post ? post.description.length > 120 ? post.description.slice(0,119):post.description : ""} />
+      <meta property="og:image" content={post.thumbnail ? post.thumbnail :""} />
       </Helmet>
 
 
