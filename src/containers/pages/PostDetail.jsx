@@ -52,17 +52,16 @@ function PostDetail({get_portfolio, post}) {
     <Layout>     
         <Helmet>
     <title>Gaston Franco | {post && post.slug=== slug ? post.title:"Blog"}</title>
-    {
-    post && post.slug=== slug ?<>
         <meta name="keywords" content="portafolio personal de gaston franco, detalles sobre proyecto de machine learning e inteligencia artificial" />
     <link rel="canonical" href="https://www.gfranco.com/" />
      <meta name="robots" content="all"/>
      <meta name="author" content="GastonFranco" />
      <meta name="publisher" content="GastonFranco" />
-     <meta property="og:title" content={post.title} />
-      <meta property="og:description" content={post.description.length > 120 ? post.description.slice(0,119):post.description} />
-      <meta property="og:image" content={post.thumbnail} />
-    </>:<></>}
+
+     <meta property="og:title" content={post.title?post.title:"Proyecto de Portfolio"} />
+      <meta property="og:description" content={post.description && post.description.length > 120 ? post.description.slice(0,119):post.description} />
+      <meta property="og:image" content={post.thumbnail ? post.thumbnail : "https://i.postimg.cc/fW8ynfbQ/logo.png"}/>
+
     <meta
       name="description"
       content="Gaston Franco, Data Scientist and Python Developer"
