@@ -63,7 +63,7 @@ function PostDetail({get_portfolio, post}) {
      <meta name="publisher" content="GastonFranco" />
      <meta property="og:title" content={post ? post.title : "Blog"} />
       <meta property="og:description" content={post ? post.description.length > 120 ? post.description.slice(0,119):post.description : ""} />
-      <meta property="og:image" content={post.thumbnail ? post.thumbnail :""} />
+      <meta property="og:image" content={post.thumbnail ? post.thumbnail :portada} />
       </Helmet>
 
 
