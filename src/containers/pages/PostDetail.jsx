@@ -58,9 +58,9 @@ function PostDetail({get_portfolio, post}) {
      <meta name="author" content="GastonFranco" />
      <meta name="publisher" content="GastonFranco" />
 
-     <meta property="og:title" content={post.title?post.title:"Proyecto de Portfolio"} />
-      <meta property="og:description" content={post.description && post.description.length > 120 ? post.description.slice(0,119):post.description} />
-      <meta property="og:image" content={post.thumbnail ? post.thumbnail : "https://i.postimg.cc/fW8ynfbQ/logo.png"}/>
+     <meta property="og:title" content={post ? post.title:"Proyecto de Portfolio"} />
+      <meta property="og:description" content={ post ? post.description && post.description.length > 120 ? post.description.slice(0,119):post.description: 'proyecto de portfolio'} />
+      <meta property="og:image" content={ post ? post.thumbnail : "https://i.postimg.cc/fW8ynfbQ/logo.png"}/>
 
     <meta
       name="description"
