@@ -11,7 +11,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = False
+
+
+# True: Local / False: Despliegue
+DEBUG = True
+# True: Postgres / False: SQLite
 AWS_POSTGRES = True
 
 ALLOWED_HOSTS = [
@@ -53,6 +57,7 @@ PROJECT_APPS = [
 'apps.contacts',
 'apps.portfolio',
 'apps.category',
+'apps.ia',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS

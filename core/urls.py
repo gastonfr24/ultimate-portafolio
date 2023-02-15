@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/contacts/', include('apps.contacts.urls')),
     path('api/portfolio/', include('apps.portfolio.urls')),
+    path('api/prices/',include('apps.ia.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
