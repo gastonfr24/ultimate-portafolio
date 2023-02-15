@@ -14,8 +14,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # True: Local / False: Despliegue
-DEBUG = True
-# True: Postgres / False: SQLite
+DEBUG = False
+# True: Postgres & S3 / False: SQLite & Local Media/Static
 AWS_POSTGRES = True
 
 ALLOWED_HOSTS = [

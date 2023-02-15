@@ -11,6 +11,7 @@ import Portafolio from "containers/pages/Portafolio";
 import About from "containers/pages/About";
 import PostDetail from "../../containers/pages/PostDetail";
 import Contact from "containers/pages/Contact";
+import EthGraph from "containers/pages/EthGraph";
 
 export default function AnimatedRoutes() {
     const location = useLocation()
@@ -27,6 +28,7 @@ export default function AnimatedRoutes() {
     <Route path="/about" element={<About />} />
     <Route path="/contacto" element={<Contact />} />
     <Route path="/portfolio/:slug" element={<PostDetail />} />
+    <Route path="/IA/ethereum-predict" element={<EthGraph />} />
 
 
   </Routes>
