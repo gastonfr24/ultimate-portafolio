@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.5aa282a6.css",
-    "main.js": "/static/js/main.b351a69f.js",
+    "main.js": "/static/js/main.fe04d846.js",
     "static/media/background.jpg": "/static/media/background.2d997da650fa2d81a438.jpg",
     "static/media/avatar.jpg": "/static/media/avatar.2192076d9629c2869ce8.jpg",
     "static/media/CV Gaston Franco.pdf": "/static/media/CV Gaston Franco.684518cf5520c75e36a1.pdf",
@@ -45,10 +45,10 @@
     "static/media/portada.png": "/static/media/portada.0921ad46870e0e80baeb.png",
     "index.html": "/index.html",
     "main.5aa282a6.css.map": "/static/css/main.5aa282a6.css.map",
-    "main.b351a69f.js.map": "/static/js/main.b351a69f.js.map"
+    "main.fe04d846.js.map": "/static/js/main.fe04d846.js.map"
   },
   "entrypoints": [
     "static/css/main.5aa282a6.css",
-    "static/js/main.b351a69f.js"
+    "static/js/main.fe04d846.js"
   ]
 }

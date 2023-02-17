@@ -21,6 +21,10 @@ ChartJS.register(
   Legend
 );
 
+const fecha = new Date();
+const month_option = { month: 'long' };
+const mes = fecha.toLocaleString('es-ES', month_option);
+
 export const options = {
   responsive: true,
   plugins: {
@@ -30,7 +34,7 @@ export const options = {
     title: {
       color: 'white',
       display: true,
-      text: 'Precio Ethereum (USD)',
+      text: `Precio Ethereum (USD)- ${mes}`,
     },
   },
 };
@@ -41,7 +45,6 @@ export default function Grafico(
   ) {
     
   const labels = Object.keys(real_price);
-    console.log(labels)
 
   const data = {
     labels: labels,
