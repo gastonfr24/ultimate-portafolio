@@ -50,6 +50,6 @@ class PredictPriceView(APIView):
                     prices[day] = None
 
 
-            return Response({'predict':json_data, 'real': prices}, status=status.HTTP_200_OK)
+            return Response({'predict':new_json_data, 'real': prices}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({'error':str(e)}, status=status.HTTP_404_NOT_FOUND)
