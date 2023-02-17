@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 import boto3
-from datetime import datetime
+from datetime import datetime, date
 import json
 import requests
 
