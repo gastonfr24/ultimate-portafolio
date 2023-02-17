@@ -25,7 +25,12 @@ class PredictPriceView(APIView):
             file_content = content_object.get()['Body'].read().decode('utf-8')
             json_data = json.loads(file_content)
 
+            # dias del mes
+            today = date.today()
+            num_days = calendar.monthrange(today.year, today.month)[1]
 
+            # hacer slicing
+            new_json_data = {k: v for k, v in json_data.items() if int(k) <= num_days}
 
             # Datos reales desde la API CoinGecko 
             response = requests.get('https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days={}&interval=daily'.format(datetime.now().day-1)).json()
@@ -36,7 +41,7 @@ class PredictPriceView(APIView):
                 day = datetime.fromtimestamp(d/ 1000.0).strftime("%-d")
                 prices[day] = price
 
-            for i in range(1, 31):
+            for i in range(1, num_days+1):
                 day = str(i)
                 if day not in prices:
                     prices[day] = None
