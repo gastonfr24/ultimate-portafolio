@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/static/css/main.5aa282a6.css",
-    "main.js": "/static/js/main.36e495b1.js",
+    "main.js": "/static/js/main.b1cf2011.js",
     "static/media/background.jpg": "/static/media/background.2d997da650fa2d81a438.jpg",
     "static/media/avatar.jpg": "/static/media/avatar.2192076d9629c2869ce8.jpg",
-    "static/media/CV Gaston Franco.pdf": "/static/media/CV Gaston Franco.684518cf5520c75e36a1.pdf",
+    "static/media/CV Gaston Franco.pdf": "/static/media/CV Gaston Franco.4f18e862d27762725113.pdf",
     "static/media/contacto.jpg": "/static/media/contacto.0bfca611de4082a8249f.jpg",
     "static/media/Gilroy-MediumItalic.woff": "/static/media/Gilroy-MediumItalic.e50c6ab1ea93e533c67d.woff",
     "static/media/Gilroy-BoldItalic.woff": "/static/media/Gilroy-BoldItalic.76c9191d364a334e16f9.woff",
@@ -45,10 +45,10 @@
     "static/media/portada.png": "/static/media/portada.0921ad46870e0e80baeb.png",
     "index.html": "/index.html",
     "main.5aa282a6.css.map": "/static/css/main.5aa282a6.css.map",
-    "main.36e495b1.js.map": "/static/js/main.36e495b1.js.map"
+    "main.b1cf2011.js.map": "/static/js/main.b1cf2011.js.map"
   },
   "entrypoints": [
     "static/css/main.5aa282a6.css",
-    "static/js/main.36e495b1.js"
+    "static/js/main.b1cf2011.js"
   ]
 }
