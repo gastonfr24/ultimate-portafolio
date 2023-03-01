@@ -43,7 +43,7 @@ const solutions = [
 function Navbar() {
   const onButtonClick = () => {
     // using Java Script method to get PDF file
-    fetch('CV Gaston Franco.pdf').then(response => {
+    fetch(CV).then(response => {
         response.blob().then(blob => {
             // Creating new object of PDF file
             const fileURL = window.URL.createObjectURL(blob);
@@ -93,8 +93,8 @@ function Navbar() {
           </Link>
           <div className=" ml-4 flex-shrink-0 mr-2">
           <NavLink to="/IA/ethereum-predict" className="group uppercase text-xs mx-4 inline-flex font-gilroy-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-violet-cus transition duration-500 ease-in-out relative">
-  Poryectos IA
-  <div className="absolute -top-3.5 group-hover:opacity-0 transition duration-500"><span className="animate-pulse bg-violet-cus text-white px-1 -py-1 rounded-lg text-[8px] font-bold opacity-80">Nuevo</span></div>
+  Proyectos IA
+  <div className="absolute -top-3.5 group-hover:opacity-0 transition duration-500"><span className="animate-pulseslow bg-violet-cus text-white px-1 -py-1 rounded-lg text-[8px] font-bold opacity-80">Nuevo</span></div>
 </NavLink>
           <NavLink to="/portfolio" className="uppercase text-xs mx-4 inline-flex font-gilroy-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-violet-cus transition duration-500 ease-in-out">
               Portfolio
